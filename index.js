@@ -40,9 +40,12 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(tatlar){
+  return[...tatlar];
 }
+
+console.log('görev 1', kopyala(orijinalTatlar));
+
 
 
 /* Görev 2:
@@ -56,10 +59,16 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(orijinalTatlar){
+  if (orijinalTatlar.length==25){
+    return true;
+  }
+  else {
+    return false;
+  }
 }
 
+console.log("görev 2",dizi25Cesitmi(orijinalTatlar));
 
 /* Görev 3:
 Pastane sahibi size yeni bir lezzet fikriyle geldi: Kakule! Bunun da çok tutacağından çok emin. Bu lezzeti eklemek için diziyi değiştirmeniz gerekir.
@@ -74,10 +83,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(yeniTat,Kakule){
+  yeniTat.unshift(Kakule);
+  return yeniTat;
 }
 
+console.log("görev 3",cesitEkle(orijinalTatlar,"Kakule"));
 
 /* Cörev 4:
 
@@ -92,9 +103,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(eskiBirCesit){
+  eskiBirCesit.pop();
+  return eskiBirCesit;
 }
+
+console.log("görev 4", sonCesitiKaldir(orijinalTatlar));
 
 
 /* Görev 5:
@@ -108,10 +122,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(sürpriz,tat){
+  return sürpriz[tat];
 }
 
+console.log("görev 5",orijinalTatlar[2]);
 
 /* Görev 6:
 
@@ -172,9 +187,16 @@ Aşağıdakileri yapmak için ortalamaKelimeSayisi işlevini kullanın:
    Örneğin: ortalamaKelimeSayisi(orijinalTatlar) 0 ile 2 arasında bir sayı döndürmelidir.
 */
 
-function ortalamaKelimeSayisi(/*kod buraya*/){
-  /*kod buraya*/
+function ortalamaKelimeSayisi(orijinalTatlar){
+  let sonuc = 0
+  for (let i = 0; i < orijinalTatlar.length; i++) {
+    let kelimeSayısı = orijinalTatlar[i].split("").length;
+    sonuc+-kelimeSayısı;
+  }
+    return sonuc/orijinalTatlar.length
 }
+
+console.log("alıstırma 1",ortalamaKelimeSayisi(orijinalTatlar));
 
 
 /* ALIŞTIRMA 2:
